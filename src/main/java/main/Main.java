@@ -1,22 +1,20 @@
 package main;
 
+import application_config.ProjectConfiguration;
 import model.Comment;
-import proxy.CommentNotificationProxy;
-import proxy.EmailCommentNotificationProxy;
-import repository.CommentRepository;
-import repository.DBCommentRepository;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import service.CommentService;
 
 public class Main {
     public static void main(String[] args) {
-        CommentRepository commentRepository = new DBCommentRepository();
-        CommentNotificationProxy commentNotificationProxy = new EmailCommentNotificationProxy();
-        CommentService commentService = new CommentService(commentRepository, commentNotificationProxy);
+        AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext(ProjectConfiguration.class);
 
         Comment comment = new Comment();
         comment.setAuthor("Volodya");
         comment.setContent("Govnovoz");
 
+        CommentService commentService = context.getBean(CommentService.class);
         commentService.publishComment(comment);
     }
 }
