@@ -1,11 +1,10 @@
 package repository;
 
 import model.Comment;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope("prototype")
 public class DBCommentRepository implements CommentRepository {
-    public void storeComment(Comment comment) {
-        System.out.println("Storing comment: " + comment.getContent());
-    }
 }
