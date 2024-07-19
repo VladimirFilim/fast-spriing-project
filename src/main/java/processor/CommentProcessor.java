@@ -10,7 +10,6 @@ import repository.DBCommentRepository;
 @Component
 @Scope("prototype")
 public class CommentProcessor {
-    @Autowired
     private CommentRepository commentRepository;
     private Comment comment;
 

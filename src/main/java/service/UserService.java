@@ -6,7 +6,6 @@ import repository.CommentRepository;
 
 @Service
 public class UserService {
-    @Autowired
     private CommentRepository repo;
 
     public CommentRepository getRepo() {
