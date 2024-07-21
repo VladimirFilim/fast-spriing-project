@@ -26,8 +26,8 @@
 
     <dependency>
       <groupId>org.aspectj</groupId>
-      <artifactId>aspectjrt</artifactId>
-      <version>1.9.20.1</version>
+      <artifactId>aspectjweaver</artifactId>
+      <version>1.6.8</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
