@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 public class Main {
 
-    private static Logger logger = Logger.getLogger(Main.class.getName());
+    private static final Logger logger = Logger.getLogger(Main.class.getName());
 
     public static void main(String[] args) {
         var context = new AnnotationConfigApplicationContext(ProjectConfiguration.class);
@@ -19,7 +19,6 @@ public class Main {
         comment.setContent("Demo comment");
         comment.setAuthor("Demo author");
 
-        String val = service.publishComment(comment);
-        logger.info(val);
+        service.publishComment(comment);
     }
 }
